@@ -1,0 +1,411 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,600,700&display=swap&subset=cyrillic-ext ");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url("../fonts/HelveticaNeue-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeue-Roman.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* звездочка означает что обращаемся ко всем тегам */
+* {
+  padding: 0;
+  /*внутренний отступ*/
+  margin: 0;
+  /* внешний отступ */
+  border: 0;
+  /* границы */
+}
+
+/* меняеем подсчет ширины блока для удобной верстки */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* убираем линии обводки у некоторых браузеров */
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+/* блоки ниже делаем блочными */
+nav, footer, header, aside {
+  display: block;
+}
+
+/* обращаемся к тегам и они уравнивают поведение шрифтом,
+ запрещает увеличение шрифта у айфонов самовольно */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-etxt-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* обращаемся к формам и просим наследовать
+ семейство шрифта, т.к. по умолчанию этого нет */
+input, button, textarea {
+  font-family: inherit;
+}
+
+/* убирает некоторые особенности в разных браузерах
+ убирает крестик в инпутах;
+ убирает лишние отступы; чистятся стили маркированных списков */
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Roboto";
+  background: #F5F5F5;
+}
+
+[class*="__container"] {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  background: url(../img/header/decor/bg.jpg) top/cover no-repeat;
+}
+
+.header__container {
+  padding-bottom: 646px;
+}
+
+.top-header__info {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  color: #FFFFFF;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 991.98px) {
+  .top-header__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.top-header__logo {
+  margin-right: 30px;
+}
+
+.top-header__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 30px;
+}
+
+@media (max-width: 991.98px) {
+  .top-header__items {
+    gap: 30px 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.top-header__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 10px;
+}
+
+.top-header__body {
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0.15px;
+}
+
+.top-header__label {
+  text-transform: uppercase;
+}
+
+.top-header__btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: #F2726F;
+  border-radius: 8px;
+  padding: 8px 34.75px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.top-header__appointment-link {
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+  color: white;
+}
+
+@media (max-width: 1050px) {
+  [class*="__container"] {
+    max-width: 970px;
+  }
+}
+
+/* №2 фикс – условный планшет */
+@media (max-width: 991.98px) {
+  [class*="__container"] {
+    max-width: 850px;
+  }
+}
+
+/* №3 фикс – условная мобила */
+@media (max-width: 767.98px) {
+  [class*="__container"] {
+    max-width: none;
+  }
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 18px 43px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  gap: 0px 5px;
+}
+
+@media (max-width: 767.98px) {
+  .menu {
+    padding: 18px 15px;
+  }
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 696px) {
+  .menu__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 25px 25px;
+  }
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 37px;
+}
+
+@media (max-width: 696px) {
+  .menu__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 23%;
+            flex: 1 0 23%;
+  }
+  .menu__item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.menu__link {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.15px;
+  color: #000000;
+  font-style: normal;
+}
+
+.menu__link_arrow {
+  background: url(../img/header/decor/arrow.svg) right center no-repeat;
+  padding-right: 21px;
+}
+
+.menu__elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0px 22px;
+}
+
+@media (max-width: 696px) {
+  .menu__elements {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.who-we-are__content {
+  position: relative;
+  top: -80px;
+  background: #5D62B5;
+  border-radius: 40px;
+  padding: 100px 87px 0px 87px;
+}
+
+@media (max-width: 767.98px) {
+  .who-we-are__content {
+    padding: 50px 40px 0px 40px;
+  }
+}
+
+@media (max-width: 472px) {
+  .who-we-are__content {
+    padding: 30px 20px 0px 20px;
+  }
+}
+
+.who-we-are__header {
+  max-width: 583px;
+}
+
+.who-we-are__header:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+.who-we-are__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #F5F5F5;
+  margin-bottom: 54px;
+}
+
+.who-we-are__img {
+  -webkit-filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
+          filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
+  border-radius: 40px;
+  position: relative;
+  margin: 0px 0px -14.2% 0px;
+  width: 100%;
+}
+
+.header-titles__subtitle {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  background: url(../img/icons/iconSubTitle.svg) left center no-repeat;
+  padding-left: 33px;
+  margin-bottom: 33px;
+}
+
+.header-titles__title {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  color: #FFFFFF;
+}

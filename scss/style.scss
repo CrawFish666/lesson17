@@ -1,0 +1,327 @@
+
+@import "_fonts";
+@import "_nullStyle";
+
+body {
+	font-family: "Roboto";
+	background: #F5F5F5;
+}
+
+[class*="__container"] {
+	max-width: 1050px;
+	margin: 0 auto;
+	padding: 0px 15px; // островок безопасности чтобы не слипались слева справа края когда уменьшаем окно(15+15px добавляем в контейнер)
+}
+// прибиваем футер к низу через flexbox используя wrapper как родителя и разрешая расширения его элемента main
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.main {
+	flex: 1 0 auto;
+}
+
+//header
+.header {
+	background: url(../img/header/decor/bg.jpg) top / cover no-repeat;
+
+	&__container {
+		padding-bottom: 646px;
+	}
+
+	&__top {
+	}
+
+	&__content {
+	}
+}
+.top-header {
+
+	&__info {
+		@media (max-width: 991.98px) {
+			flex-direction: column;
+			gap: 30px;
+		}
+		padding-top: 27px;
+		padding-bottom: 27px;
+		display: flex;
+		align-items: center;
+		font-size: 12px;
+		color: #FFFFFF;
+		justify-content: space-between;
+
+	}
+
+	&__logo {
+
+		margin-right: 30px;
+
+	}
+
+	&__img-logo {
+
+	}
+
+	&__items {
+		@media (max-width: 991.98px) {
+			gap: 30px 30px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		display: flex;
+		gap: 0px 30px;
+	}
+
+	&__item {
+		flex: 0 0 auto;
+		display: flex;
+		gap: 0px 10px;
+	}
+
+	&__images {
+
+	
+	}
+
+	&__img {
+
+
+	}
+
+	&__body {
+		font-weight: 700;
+		line-height: 22px;
+		letter-spacing: 0.15px;
+	}
+
+	&__label {
+		text-transform: uppercase;
+	}
+
+	&__value {
+	}
+
+	&__btn {
+		@media (max-width: 991.98px) {
+			// display: none;
+		}
+		flex: 0 0 auto;
+		align-self: center;
+		background: #F2726F;
+		border-radius: 8px;
+		padding: 8px 34.75px;
+
+		font-weight: 700;
+		line-height: 24px;
+		letter-spacing: 0.15px;
+		text-transform: uppercase;
+		color: white;
+
+	}
+
+	&__appointment-link {
+		font-weight: 700;
+		line-height: 24px;
+		letter-spacing: 0.15px;
+		text-transform: uppercase;
+		color: white;
+	}
+
+	&__menu {
+	}
+}
+.content-header {
+
+	&__title {
+	}
+
+	&__button {
+	}
+}
+
+@media (max-width: 1050px) {
+    [class*="__container"] {
+		max-width: 970px; 
+    }
+}
+/* №2 фикс – условный планшет */
+@media (max-width: 991.98px) {
+    [class*="__container"] {
+        max-width: 850px;
+    }
+}
+/* №3 фикс – условная мобила */
+@media (max-width: 767.98px) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+
+// header menu
+.top-header {
+
+	&__menu {
+	}
+}
+.menu {
+	@media (max-width: 767.98px) {
+		padding: 18px 15px;
+	}
+	display: flex;
+	justify-content: space-between;
+	padding: 18px 43px;
+	background: #FFFFFF;
+	border-radius: 10px;
+	gap: 0px 5px;
+
+	&__list {
+		display: flex;
+		@media (max-width: 696px) {
+			flex-wrap: wrap;
+			gap: 25px 25px;
+		}
+
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 37px;
+		}
+		@media (max-width: 696px) {
+			flex: 1 0 23%;
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+
+	}
+
+	&__link {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 22px;
+		letter-spacing: 0.15px;
+		color: #000000;
+		font-style: normal;
+		&_arrow {
+			background: url(../img/header/decor/arrow.svg) right center no-repeat;
+			padding-right: 21px;
+		}
+	}
+
+	&__elements {
+		display: flex;
+		gap: 0px 22px;
+		@media (max-width: 696px) {
+			align-items: center;
+		}
+	}
+
+	&__search {
+	}
+
+	&__market {
+	}
+}
+.search {
+
+	&__link {
+	}
+
+	&__img {
+	}
+}
+.market {
+
+	&__link {
+	}
+
+	&__img {
+	}
+}
+
+
+
+// who-we-are
+
+.who-we-are {
+
+	&__container {
+
+	}
+
+	&__content {
+		position: relative;
+		top: -80px;
+		// position: absolute;
+		// box-sizing: border-box;
+		background: #5D62B5;
+		border-radius: 40px;
+		padding: 100px 87px 0px 87px;
+		@media (max-width: 767.98px) {
+			padding: 50px 40px 0px 40px;
+		}
+		@media (max-width: 472px) {
+			padding: 30px 20px 0px 20px;
+		}
+	}
+	&__header {
+		max-width: 583px;
+		&:not(:last-child) {
+			margin-bottom: 36px;
+		}
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 0.15px;
+		color: #F5F5F5;
+		margin-bottom: 54px;
+	}
+
+	&__images {
+		// position: relative;
+		// top: 0px;
+
+	}
+
+	&__img {
+		filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
+		border-radius: 40px;
+		position: relative;
+		margin: 0px 0px -14.2% 0px;
+		width: 100%;
+		// height: 100%;
+		// position: relative;
+		// z-index: 20;
+		// object-fit: cover;
+		// object-position: center;
+		// margin: 0px 0px -10% 0px;
+
+	}
+}
+.header-titles {
+
+	&__subtitle {
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 24px;
+
+		letter-spacing: 2.5px;
+		text-transform: uppercase;
+		color: #F5F5F5;
+		background: url(../img/icons/iconSubTitle.svg) left center no-repeat;
+		padding-left: 33px;
+		margin-bottom: 33px;
+	}
+
+	&__title {
+		font-weight: 900;
+		font-size: 36px;
+		line-height: 42px;
+		color: #FFFFFF;
+	}
+}
